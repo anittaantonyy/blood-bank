@@ -1,0 +1,78 @@
+<!doctype html>
+{% load crispy_forms_filters %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+
+        <div class="px-5 ms-xl-4">
+          <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+          <span class="h1 fw-bold mb-0">Logo</span>
+        </div>
+
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+<!--          <form style="width: 23rem;">-->
+
+<!--            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>-->
+
+<!--            <div data-mdb-input-init class="form-outline mb-4">-->
+<!--              <input type="email" id="form2Example18" class="form-control form-control-lg" />-->
+<!--              <label class="form-label" for="form2Example18">Email address</label>-->
+<!--            </div>-->
+
+<!--            <div data-mdb-input-init class="form-outline mb-4">-->
+<!--              <input type="password" id="form2Example28" class="form-control form-control-lg" />-->
+<!--              <label class="form-label" for="form2Example28">Password</label>-->
+<!--            </div>-->
+
+<!--            <div class="pt-1 mb-4">-->
+<!--              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block" type="button">Login</button>-->
+<!--            </div>-->
+
+<!--            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>-->
+<!--            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>-->
+
+           <form method = 'post'>
+                {% csrf_token %}
+            {{form1|crispy}}
+            {{form2|crispy}}
+               <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+           </form>
+        </div>
+
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="data:image/png;base64,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"
+          alt="Login image" class="w-100 vh-50" style="object-fit: cover; object-position: left;">
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<style>
+.bg-image-vertical {
+position: relative;
+overflow: hidden;
+background-repeat: no-repeat;
+background-position: right center;
+background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+.h-custom-2 {
+height: 100%;
+}
+}
+</style>

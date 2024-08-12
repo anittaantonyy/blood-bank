@@ -1,0 +1,22 @@
+{% extends 'admin_template/admin_template.html' %}
+
+{% block content %}
+<div class="row">
+  {% for i in new %}
+  <div class="col-md-6 mb-6">
+    <div class="card" style="width: 18rem;">
+
+      <div class="card-body">
+<!--        <p class="card-text">{{i.user}}</p>-->
+        <p class="card-text">donor name:{{i.name}}</p>
+        <p class="card-text">blood quantity:{{i.quantity}}</p>
+        <p class="card-text">location:{{i.location}}</p>
+
+
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}

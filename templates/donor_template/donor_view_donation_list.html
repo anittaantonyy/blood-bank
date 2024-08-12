@@ -1,0 +1,30 @@
+{% extends 'donor_template/donor_template.html' %}
+
+{% block content %}
+<div class="row">
+  {% for i in new %}
+  <div class="col-md-6 mb-6">
+    <div class="card" style="width: 18rem;">
+
+      <div class="card-body">
+<!--        <p class="card-text">{{i.user}}</p>-->
+        <p class="card-text">patient name:{{i.name}}</p>
+        <p class="card-text">blood quantity:{{i.quantity}}</p>
+        <p class="card-text">location:{{i.location}}</p>
+
+
+                   <a href="{% url 'add_to_approve' i.id %}">
+                <button type="button" class="btn btn-primary">approve </button></a>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}
+
+

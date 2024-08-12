@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+
+        <div class="px-5 ms-xl-4">
+          <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+          <span class="h1 fw-bold mb-0">Logo</span>
+        </div>
+
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+          <form method = "POST">
+            {% csrf_token %}
+
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
+
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="text" name="uname" id="form2Example18" class="form-control form-control-lg" />
+              <label class="form-label" for="form2Example18">username </label>
+            </div>
+
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="password" name="pass" id="form2Example28" class="form-control form-control-lg" />
+              <label class="form-label" for="form2Example28">Password</label>
+            </div>
+
+            <div class="pt-1 mb-4">
+              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block" type="submit">Login</button>
+            </div>
+
+            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
+
+          </form>
+
+        </div>
+
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="data:image/png;base64,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"
+          alt="Login image" class="w-100 vh-50" style="object-fit: cover; object-position: left;">
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<style>
+.bg-image-vertical {
+position: relative;
+overflow: hidden;
+background-repeat: no-repeat;
+background-position: right center;
+background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+.h-custom-2 {
+height: 100%;
+}
+}
+</style>

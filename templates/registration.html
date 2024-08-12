@@ -1,0 +1,79 @@
+<!doctype html>
+{% load crispy_forms_filters %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+<section class="vh-100">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-6 text-black">
+
+        <div class="px-5 ms-xl-4">
+          <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
+          <span class="h1 fw-bold mb-0">Logo</span>
+        </div>
+
+        <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+
+<!--          <form style="width: 23rem;">-->
+
+<!--            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>-->
+
+<!--            <div data-mdb-input-init class="form-outline mb-4">-->
+<!--              <input type="email" id="form2Example18" class="form-control form-control-lg" />-->
+<!--              <label class="form-label" for="form2Example18">Email address</label>-->
+<!--            </div>-->
+
+<!--            <div data-mdb-input-init class="form-outline mb-4">-->
+<!--              <input type="password" id="form2Example28" class="form-control form-control-lg" />-->
+<!--              <label class="form-label" for="form2Example28">Password</label>-->
+<!--            </div>-->
+
+<!--            <div class="pt-1 mb-4">-->
+<!--              <button data-mdb-button-init data-mdb-ripple-init class="btn btn-info btn-lg btn-block" type="button">Login</button>-->
+<!--            </div>-->
+
+<!--            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>-->
+<!--            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>-->
+
+           <form method = 'post'>
+                {% csrf_token %}
+            {{form1|crispy}}
+            {{form2|crispy}}
+               <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+           </form>
+        </div>
+
+      </div>
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAACUCAMAAAD79nauAAAAkFBMVEX8/v/sMSb8///qAADsLiPrDwDsKx/sKBzyjIXvZFv65+X8/frsIhD519DrIhTyiITtLhj78vDwc2z1qJ/40M33ysTtRTrrGgfwgHv1s6342Nj8+fn67ezsOjHwdmv1ycfxpqTxubTxmJX0n5fxf3XsR0D1w8DwbmTuW0/54N7ylY7pd3Dvd3bqTkXtVE7uTj5kNjLYAAAJx0lEQVR4nO2aaXfiOhKGrdJmO4qIwSCv7JtJQ///fzclO4AB07fPjDPhnqP3E4bkuB6rVJvseU5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk5OTk4/KqjV/f3/35r/TuDlVVzl9/YC5FEV/jsoALJlSSkd3tkL+WzI6ee/YjEgT0suCCF8d2MtVInhchllj0v0coLc1xYBReOWtVBtlNBp9Wuzmb86BTJw1jAQ3VoKKIxkdAxzLaSpXh0ipeQsNrkYC/lRMrkAiEtG6Pa1ISA6+9IdRKqJWeGeryYIkb44RGshWhAQ7aQOCvAaiMWLQ+zlFUIGF4h4Iph9/g1E/NIQkJfsCsHnF4hUiVNkIXBPMPLaCQ+iNgQtLhBzLof2AhaEmCR6bYj2Sqhda18bfaghlprpF98SHkwuwYnx7AoxK/XSelOx02b48rlufo5OzLQCKUSBmVqIlOvNq6c660+6YVDL9gNH63FjQ3bk5EVDE5xlP2+ZpdC0LpAu30M+oH44O9HTDG7/4SWEprzNVuvpcD3KarviI5bhQVxb+lZtF9sssh/zEWeULkP7Odqu1mt/Xv/NT9tvBV6WUK60lFJRuSqsjeF7bq2L0t+UchQtV5XtiKqaMh/v7T9obTiyvsImh2Jp1CWoClpijVc/X9tV0HOkElwdwi8PqoZUX6MwX2c/TgFhwFvZDSsNvqqfLUSfvFWAEEaDrN4M241hBv0Nl6j+nW9+uqRFBkNuxdQht+vwi9/9oI7WmRZEUZGks9k2PRypwQegfzhcQTS8Z7A5bokP/PD4gwpCWFAzGV+GIcWBSUbkzyYODP4PpqKwXZgR9vg9X2Z0Mr8GJPxUfEpu6E+mcCgm8tFULPA+veRxIWx7oXBj3A4P8nS1Ws1/sKpF5+hiwHahUB0LgQ41LO6tvaS9v8foN7fAqXMh2Ef0hI4vW57UMh3ysPrr6hz/uMdKHrxuU/Uw97u8CX9pOr0cDSmsoihvSpWE0tNfuhRkGJ7fe6OAqhvCHGCqOn9h4gyxGtZaH7Z1u+crGfw9BOE9QsyeOM0cht0QhH7dHIzSyorLtZ0evCDEAtb/BPHBiPjglDPGfXSpH4SIn0IcOvPHDYRa47YeYzrBRvwKcRequq56hgifQKTPYi8zVwg99Wo/IjS8QkAeLxZYu38lPyhm9WWDARFebfOeIeDpnsi6f5HHe4gRb0NAvC7Rx8wkaZYl3RG8VJtlvfuz4Qeler3gfUJ4QESXqcb3wrI72a1b7jS1vrGX+nd0hoCYKKEoF0JNbBE5MloghJAmwX0T7g1jGAsmrF+I7nQg91HeWXZcx5cIIYPxeBtoNnm/RKfwQzLmb9OTJhwRx4qJcjUebYT1UG9JiZj4U4IJtleIbafXMIPVaicED1vRSWLSwu5o5F0gRtRiYk97lIRHMNQCCXEnl0zvorwUrAxtLBD9QoSy02voFqpjR0WCS3QHwQUj64s7/ZaCNHuBEzUOT1INPLsZpvh9iFHEHJqhT78Q0a/OfIDVhQ07j3DX0ax1J2yMRh+C8fUZAk2f1hAxfkrjUuhRfTkyhFcYz+tqo+cQa8vY7nxAI+sD99+K8r0F0WzsNyZsojhDcL+2OpNMpdiSyDl83YVXY4SovgUi3HfWscoHWD7wqUHegmhCLKzQwPF1JQYNhGJ2JdjXSqRniG9ZCQ+WnRBiEkJO7n5i5ew6mv2C8G4gFJO/m/kbJSrONsI0M2hfizLEarM+YLJ1Qs8QVXdC0CuA2e0YhMghtCHqsgOiUljnayACXWc+gB3G2DwKpNzby2KDvhcVlMiT/Q8bunqF8J5USWKS1Z7SFm9VePXGXqTpARn47ryxxzYTxHmxNnZz2Cykg8zLMJlgOZYHiuj1+6LU/SY7aw3ozqzNMcdGiW5/M2/dGNASYWeDQqr9JcTma86EzR7MHN/wmZ840XgphcHdBDO8E16qyYb1DPE0QOGzgzBojfqCtzaEfWuizhPByvYT2NlZzyl8wQ02GXpdV4PVTnGlDJW2doJ8Ljhe7NO17rGza8zJk26H0viAQ3KmkOXNhAyyba1ZHNbbu9oummF0NvKTZB43SRGL2HmS+Glc80P+vlr7aRWUat33iAeTs+6isBnvSqHnd6Oam0kBZIPEajDCFcjzSwcB9upyCc1vlPFR7xOe7kGZTRZ42/BUU2D8/9N9IeFaG2MUp7vigfbmAt4wJvcPcXv+fhUTc/sCwQ5LQRP8ef1hgKibY2kweu7+PI/5NgjwOykEwcobik+qf//DsBUGSpy2VZwesaLcnp2nc0m+C8IWgt2bW9leITqYx7H37dAPIeqmCOasbh3qg5qqKpqDskZFFdZXXxD9n5ZhSugsZ5kZ12db9x5i2zTK6WXAUUPgasG2tGeu4MW7JgKPcCNHO2reM3uEZl/O+YIAb43X/Y5woegOtLLE+x5ocjuChXxGMClfB7OXlVgJgRUWzCgmC24z38oeH+jyUCpMdQKrrDPESBGV9BxpcS0694UsUx/vuqtaSw+hj10OH0Ztd8I98R5jJ1qPoRb0I0kX85KJj8JCoPlsN9FE784rYZuN4GE6/b9THGhHpBV0kVIsFyaL88ZEEzeaMT5o+RhCEDKZlFhgHGyBXq0ymx0WWLhmNYQJsijeS3GsGoh8j4Vt7wzWurl8qMu1dY64tI8yCJuAU+0QSsqb5GchmFYaXUbVY81GOUKMLcTXrjdsEtcQuLpMfQODpZht7sYDvDlsrHOFpocsLLKVxoeu6jPWGwg2SQ5+cmzcDGPR+3ixxWaogdBJ3Vx/iAZC7Pn3vTIF2a7dQwjztaGhONhXTDkJdhP7Bzy4s+Cysas9thczyBc7wTH6kFsIeYY4KmKW3wRRW3txKS3Tc/RAqwQuAJNYgRNG/XtPOIdYrImVHSekUmu+H05lNwQf7bXdLd9FYV8JYk2K2IetbAZVoOrGg0mbO+7/7QIxRhNX2NnKfe55lz1xD5GGhsnT951WQv5JlBCqPNxXDatSCabFsHhMtBd38nx8xFtrfGyz5DOIEayw6zv0m7FvDPIWw3KSxPd3wCj1WX7s0q7nZ/PEMR1vtwdG5CRECL7ErI5lwDOIEONt+Y2H+Bhaut8GhyiLO5bB+8oTZVkyhd6WerntUJLBXj2HgIUkZvqdx9/PSrOnJRsMsJ+weULRcmzXTClpDCdrbiF2nP+qIYzGh/9GJR3ZiQiXr/WOMLz7Ayt/9N6cpobJ/hQcYLzbhZCn02k9cMrWUx9LvmQ4zWzLPZ0OXwri4Ujevix1/uLaxN5c9l6Kf4Ne30InJycnJycnJycnJycnJycnJycnJycnJycnJycnpx/UfwAxCK39RgSdigAAAABJRU5ErkJggg=="
+          alt="Login image" class="w-100 vh-50" style="object-fit: cover; object-position: le">
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<style>
+.bg-image-vertical {
+position: relative;
+overflow: hidden;
+background-color: #f0f0f0;
+background-repeat: no-repeat;
+background-position: right center;
+background-size: auto 100%;
+}
+
+@media (min-width: 1025px) {
+.h-custom-2 {
+height: 100%;
+}
+}
+</style>

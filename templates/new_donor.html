@@ -1,0 +1,53 @@
+{% extends 'admin_template/admin_template.html' %}
+{% block content %}
+
+<table class="table">
+    <div class="Seller">
+<!--      <table class="table table-striped"-->
+           <thead>
+           <tr>
+                <th scope="col">sl no</th>
+                <th scope="col">user</th>
+                <th scope="col">name</th>
+
+
+                <th scope="col">email</th>
+                <th scope="col">phone_number</th>
+                <th scope="col">blood_type</th>
+                <th scope="col">delete</th>
+                <th scope="col">update</th>
+
+
+
+           </tr>
+           </thead>
+
+           {% for i in new %}
+           <tr>
+               <th scope="row">{{forloop.counter}}</th>
+               <td>{{i.user}}</td>
+               <td>{{i.name}}</td>
+
+               <td>{{i.email}}</td>
+               <td>{{i.phone_number}}</td>
+               <td>{{i.blood_type}}</td>
+               <td><a href="{% url 'delete_donor_data' i.id %}">
+                   <button type="button" class="btn btn-primary">delete</button>
+                    </a></td>
+               <td><a href="{% url 'update_donor_data' i.id %}">
+                   <button type="button" class="btn btn-primary">update</button>
+                    </a></td>
+
+
+
+
+
+    </tr>
+           {% endfor %}
+           <div class="d-grid gap-2 d-md-block">
+
+</div>
+
+
+</table>
+{% endblock %}

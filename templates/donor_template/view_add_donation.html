@@ -1,0 +1,31 @@
+{% extends 'donor_template/donor_template.html' %}
+
+{% block content %}
+<div class="row">
+  {% for i in new %}
+  <div class="col-md-6 mb-6">
+    <div class="card" style="width: 18rem;">
+
+      <div class="card-body">
+<!--        <p class="card-text">{{i.user}}</p>-->
+        <p class="card-text">patient name:{{i.product.name}}</p>
+        <p class="card-text">blood quantity:{{i.product.quantity}}</p>
+        <p class="card-text">location:{{i.product.location}}</p>
+
+         <a href="{% url 'add_to_approve' i.id %}">
+                <button type="button" class="btn btn-primary">approve </button></a>
+               {% elif i.approve_status5 == 1 %}
+          <button type="button" class="btn btn-secondary">approved </button>
+
+          {% endif %}
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}
